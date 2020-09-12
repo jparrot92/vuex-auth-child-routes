@@ -20,5 +20,10 @@ npm run build
 npm run lint
 ```
 
+### Run server
+```
+json-server --watch db.json --middlewares login.js
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
