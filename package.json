@@ -10,8 +10,10 @@
   "dependencies": {
     "@precision-nutrition/vee-validate": "^2.1.8",
     "axios": "^0.20.0",
+    "bootstrap": "^4.5.2",
     "bootstrap-vue": "^2.16.0",
     "core-js": "^3.6.5",
+    "vee-validate": "^3.3.11",
     "vue": "^2.6.11",
     "vue-axios": "^2.1.5",
     "vue-loading-overlay": "^3.4.0",
