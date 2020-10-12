@@ -1,7 +1,7 @@
 <template>
     <b-nav tabs>
-        <b-nav-item exact to="/secret">Página secreta</b-nav-item>
-        <b-nav-item exact to="/secret/notes">Notas secretas</b-nav-item>
+        <b-nav-item exact exact-active-class="active" to="/secret">Página secreta</b-nav-item>
+        <b-nav-item exact exact-active-class="active" to="/secret/notes">Notas secretas</b-nav-item>
         <b-nav-item @click="signOff">Cerrar sesión</b-nav-item>
     </b-nav>
 </template>

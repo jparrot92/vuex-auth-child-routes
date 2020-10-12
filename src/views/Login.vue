@@ -1,11 +1,20 @@
 <template>
   <div>
-    <login-form :user="user"></login-form>
+    <h3 class="text-center text-muted mt-4">
+      Iniciar sesión
+    </h3>
+
+    <b-alert v-if="error" show variant="danger">
+      {{ errorMessage }}
+    </b-alert>
+
+    <login-form :user="user" @login="submit"></login-form>
   </div>
 </template>
 
 <script>
 import LoginForm from '@/components/Authentication/Login.vue';
+import { mapState, mapActions } from 'vuex';
 
 export default {
   components: {
@@ -14,10 +23,20 @@ export default {
   data() {
     return {
       user: {
-        email: '',
-        password: '',
+        email: 'admin@vue.com',
+        password: '@Password1',
       },
     };
+  },
+  computed: {
+    ...mapState('auth', ['error', 'errorMessage']),
+  },
+  methods: {
+    ...mapActions('auth', ['signIn']),
+    async submit() {
+      await this.signIn(this.user);
+      this.$router.push('/secret');
+    },
   },
 };
 </script>

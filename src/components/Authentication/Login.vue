@@ -1,7 +1,7 @@
 <template>
   <div>
-    <validation-observer ref="observer" v-slot="{ invalid }">
-      <b-form @submit.prevent="$emit('login')">
+    <validation-observer ref="observer" v-slot="{ invalid, handleSubmit }">
+      <b-form @submit.prevent="handleSubmit(submit)">
         <validation-provider
           name="email"
           :rules="{ required: true, email: true }"
@@ -75,6 +75,12 @@ export default {
         }
         return true;
       },
+    },
+  },
+  methods: {
+    submit() {
+      // Only executes when validation passes!
+      this.$emit('login');
     },
   },
 };
